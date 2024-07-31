@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="tabTitle">Bookshelf | Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/8a80b728dc.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div class="navbar has-background-success">
+      <div class="navbar-brand">
+        <div class="navbar-item">
+          <i class="fa-solid fa-book mr-2 is-size-3 has-text-success-light"></i>
+          <p class="is-size-4 has-text-success-light">Bookshelf</p>
+        </div>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start m-auto">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a id="homePage" class="navbar-item has-text-success-light" href="#"
+            >Home</a
+          >
+          <a
+            id="bookshelfPage"
+            class="navbar-item has-text-success-light"
+            href="#"
+            >My Bookshelf</a
+          >
+          <a
+            id="fantasyPage"
+            class="navbar-item has-text-success-light"
+            href="#"
+            >Fantasy</a
+          >
+          <a id="romcomPage" class="navbar-item has-text-success-light" href="#"
+            >Rom Coms</a
+          >
+          <a
+            id="mysteryPage"
+            class="navbar-item has-text-success-light"
+            href="#"
+            >Mystery</a
+          >
+          <a
+            id="fictionPage"
+            class="navbar-item has-text-success-light"
+            href="#"
+            >Realistic Fiction</a
+          >
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <p
+              id="nav_email"
+              class="has-text-warning mr-1 has-text-weight-medium"
+            ></p>
+          </div>
+          <div class="navbar-item">
+            <div class="buttons">
+              <a
+                class="button has-background-success-dark has-text-success-light is-hidden"
+                href="#"
+                id="signoutbtn"
+                >Sign Out</a
+              >
+              <a
+                class="button has-background-success-dark has-text-success-light"
+                href="#"
+                id="signupbtn"
+                >Sign Up</a
+              >
+              <a
+                class="button has-background-success-dark has-text-success-light"
+                href="#"
+                id="signinbtn"
+                >Sign In</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- sign up modal -->
+    <div class="modal" id="smodal">
+      <div class="modal-background" id="modalbg"></div>
+      <div class="modal-content has-background-white p-4">
+        <p class="is-size-3 has-text-weight-semibold has-text-centered">
+          Sign Up Form!
+        </p>
+        <form id="sign_up_form">
+          <!-- email -->
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left has-icons-right">
+              <input
+                class="input"
+                id="sign_email"
+                type="email"
+                placeholder="Email input"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- password -->
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+              <input type="password" id="sign_pass" class="input" />
+            </div>
+          </div>
+
+          <p class="has-text-centered">
+            <!-- submit and reset buttons -->
+            <input type="submit" value="Submit" class="button in-primary" />
+
+            <input type="reset" value="Reset" class="button is-success" />
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- sign in modal -->
+    <div class="modal" id="smodal2">
+      <div class="modal-background" id="modalbg2"></div>
+      <div class="modal-content has-background-white p-4">
+        <p class="is-size-3 has-text-weight-semibold has-text-centered">
+          Sign In Form!
+        </p>
+        <form id="sign_in_form">
+          <!-- email -->
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left has-icons-right">
+              <input
+                class="input"
+                id="sign_in_email"
+                type="email"
+                placeholder="Email input"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- password -->
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+              <input type="password" id="sign_in_pass" class="input" />
+            </div>
+          </div>
+
+          <p class="has-text-centered">
+            <!-- submit and reset buttons -->
+            <input type="submit" value="Submit" class="button in-primary" />
+
+            <input type="reset" value="Reset" class="button is-success" />
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- header -->
+    <h1
+      class="header mt-5 is-size-3 has-text-centered has-background-success-light p-4"
+      id="header"
+    >
+      Welcome to Bookshelf
+    </h1>
+
+    <!-- main -->
+    <div id="mainContent" class="section">
+      <div class="container is-fluid">
+        <div class="columns">
+          <!-- left column -->
+          <div class="column">
+            <div class="box">
+              <p>
+                Welcome to Bookshelf, your online platform for organizing and
+                managing your book collection. With Bookshelf, you can:
+              </p>
+
+              <ul class="content">
+                <li class="ml-4">
+                  Create a digital bookshelf to organize your books by genre,
+                  author, or any other custom category.
+                </li>
+
+                <li class="ml-4">
+                  Keep track of the books you've read, want to read, or
+                  currently reading.
+                </li>
+
+                <li class="ml-4">
+                  Discover new books through personalized recommendations based
+                  on your reading preferences.
+                </li>
+
+                <li class="ml-4">
+                  Connect with other book enthusiasts, share recommendations,
+                  and join discussions about your favorite books.
+                </li>
+              </ul>
+
+              <p>Start building your virtual library today!</p>
+            </div>
+          </div>
+
+          <!-- middle column -->
+          <div class="column">
+            <figure class="image is-3by3">
+              <img src="bookshelf.png" alt="bookshelf" />
+            </figure>
+          </div>
+
+          <!-- right column -->
+          <div class="column">
+            <!-- review form -->
+            <div class="box">
+              <h2 class="title">Add Your Review</h2>
+
+              <form action="#" method="POST" id="reviewForm">
+                <div class="field">
+                  <label class="label" for="name">Name:</label>
+
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="text"
+                      id="review_name"
+                      name="name"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label" for="email">Email:</label>
+
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="email"
+                      id="review_email"
+                      name="email"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label" for="rating">Rating:</label>
+
+                  <div class="control">
+                    <div class="select">
+                      <select id="review_rating" name="rating" required>
+                        <option value="5">5 Stars</option>
+
+                        <option value="4">4 Stars</option>
+
+                        <option value="3">3 Stars</option>
+
+                        <option value="2">2 Stars</option>
+
+                        <option value="1">1 Star</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label" for="review">Review:</label>
+
+                  <div class="control">
+                    <textarea
+                      class="textarea"
+                      id="review"
+                      name="review"
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <div class="control">
+                    <input
+                      id="reviewsBtn"
+                      class="button is-success"
+                      type="submit"
+                      value="Submit"
+                    />
+
+                    <input class="button" type="reset" value="Reset" />
+                  </div>
+                </div>
+                <div
+                  id="add_book_form_err_txt"
+                  class="has-text-danger-dark mt-1"
+                ></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="reviews_section" class="m-6"></div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer has-background-success p-3">
+      <div class="content has-text-centered">&copy; 2024 Bookshelf</div>
+    </div>
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+    <script>
+      // TODO
+      // Copy **only** your firebaseConfig from Google Firebae and add it below
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAccdf-ZjlcD2Aja6UbKvwyM672tJgsZcw",
+        authDomain: "final-project-a422d.firebaseapp.com",
+        projectId: "final-project-a422d",
+        storageBucket: "final-project-a422d.appspot.com",
+        messagingSenderId: "101235909143",
+        appId: "1:101235909143:web:18ed56553290c2cb69b252",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      // define authentication variable
+      let auth = firebase.auth();
+      let db = firebase.firestore();
+      let ref = firebase.storage().ref();
+    </script>
+
+    <!-- make sure to add your own js file as the last line in index.html file -->
+    <script src="app.js"></script>
+  </body>
+</html>
